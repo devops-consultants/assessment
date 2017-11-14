@@ -12,8 +12,7 @@ pipeline {
             script {
                 docker.withServer('tcp://localhost:2376') {
                     echo 'Pulling image'
-                    sh 'docker ps'
-                    sh 'docker pull hello-world'
+                    docker.image('hello-world').pull
                 }
             }
         }
