@@ -10,6 +10,8 @@ pipeline {
     stage('Pull Image') {
         steps {
             echo 'Pulling image'
+            sh 'docker ps'
+            sh 'docker pull hello-world'
         }
     }
     stage('Start Container') {
