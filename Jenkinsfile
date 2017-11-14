@@ -9,9 +9,11 @@ pipeline {
   stages {
     stage('Pull Image') {
         steps {
-            echo 'Pulling image'
-            sh 'docker ps'
-            sh 'docker pull hello-world'
+            docker.withServer('tcp://localhost:2376') {
+                echo 'Pulling image'
+                sh 'docker ps'
+                sh 'docker pull hello-world'
+            }
         }
     }
     stage('Start Container') {
