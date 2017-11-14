@@ -12,5 +12,20 @@ pipeline {
             echo 'Pulling image'
         }
     }
+    stage('Start Container') {
+        steps {
+
+        }
+    }
+    stage('Archive Logs') {
+        steps {
+
+        }
+    }
+    stage('Tear Down') {
+        steps {
+            
+        }
+    }
   }
 }
