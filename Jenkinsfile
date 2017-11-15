@@ -9,6 +9,7 @@ pipeline {
   stages {
     stage('Pull Image') {
         steps {
+            sh 'find / -name docker'
             script {
                 docker.withServer('tcp://localhost:2376') {
                     echo 'Pulling image'
